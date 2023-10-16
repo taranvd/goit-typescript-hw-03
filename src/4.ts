@@ -2,9 +2,7 @@ abstract class House {
   protected door: boolean = false;
   public readonly tenants: Person[] = [];
 
-  constructor(protected key: Key) {
-    this.key = key;
-  }
+  constructor(protected key: Key) {}
 
   public comeIn(tenant: Person) {
     if (this.door) {
@@ -27,9 +25,7 @@ class MyHouse extends House {
 }
 
 class Key {
-  constructor(private signature: number) {
-    this.signature = signature;
-  }
+  constructor(private signature: number) {}
 
   getSignature() {
     return this.signature;
@@ -37,10 +33,7 @@ class Key {
 }
 
 class Person {
-  constructor(private key: Key, public name: string) {
-    this.key = key;
-    this.name = name;
-  }
+  constructor(private key: Key, public name: string) {}
 
   getKey() {
     return this.key;
@@ -53,10 +46,8 @@ const house = new MyHouse(key);
 const person = new Person(key, "Repeta");
 
 house.openDoor(person.getKey());
-
 house.comeIn(person);
-
-console.log(house.tenants);
+console.log(house);
 
 //*
 

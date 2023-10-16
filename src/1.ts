@@ -5,11 +5,11 @@
 */
 
 class Student {
-  constructor(public name: string, public age: number, public grade: string) {
-    this.name = name;
-    this.age = age;
-    this.grade = grade;
-  }
+  constructor(public name: string, public age: number, public grade: string) {}
 }
+
+const student = new Student("Vlad", 22, "Test");
+
+console.log(student);
 
 export {};
